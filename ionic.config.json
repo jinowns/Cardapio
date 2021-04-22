@@ -1,5 +1,7 @@
 {
   "name": "Cardapio",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
