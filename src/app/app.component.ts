@@ -8,13 +8,16 @@ import { BebidaPage } from '../pages/bebida/bebida';
 import { PratoPage } from '../pages/prato/prato';
 import { SobremesaPage } from '../pages/sobremesa/sobremesa';
 import { LanchePage } from '../pages/lanche/lanche';
+import { CarrinhoPage } from '../pages/carrinho/carrinho';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
   rootPage:any = HomePage;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, 
+              statusBar: StatusBar, 
+              splashScreen: SplashScreen) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.

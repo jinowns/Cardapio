@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="dark">
     <ion-title>
       Sonho na Cozinha
     </ion-title>
@@ -9,36 +9,28 @@
 
 <ion-content class="card-background-page">
 
-  <ion-card>
-    <button (click)="openLanche()"round>
-      <img src="../../assets/imgs/_pagLanches.png"/>
-      <div class="card-title">Lanches</div>
-      <div class="card-subtitle">6 Listados</div>
-    </button>    
+  <ion-card (click)="openLanche()"round>
+    <img src="../../assets/imgs/_pagLanches.png"/>
+    <div class="card-title">Lanches</div>
+    <div class="card-subtitle">6 Listados</div>   
   </ion-card>
  
-  <ion-card>
-    <button (click)="openPrato()"round>
-      <img src="../../assets/imgs/_pratos.png"/>
-      <div class="card-title">Pratos</div>
-      <div class="card-subtitle">5 Listados</div>
-    </button>  
+  <ion-card (click)="openPrato()"round>
+    <img src="../../assets/imgs/_pratos.png"/>
+    <div class="card-title">Pratos</div>
+    <div class="card-subtitle">5 Listados</div>  
   </ion-card>
 
-  <ion-card>
-    <button (click)="openSobremesa()"round>
-      <img src="../../assets/imgs/_sobremesa.png"/>
-      <div class="card-title">Sobremesas</div>
-      <div class="card-subtitle">5 Listados</div>
-    </button>  
+  <ion-card (click)="openSobremesa()"round>    
+    <img src="../../assets/imgs/_sobremesa.png"/>
+    <div class="card-title">Sobremesas</div>
+    <div class="card-subtitle">5 Listados</div>      
   </ion-card>
 
-  <ion-card>
-    <button (click)="openBebida()"round>
-      <img src="../../assets/imgs/_bebidas.png"/>
-      <div class="card-title">Bebidas</div>
-      <div class="card-subtitle">5 Listados</div>
-    </button>  
+<ion-card (click)="openBebida()"round>
+    <img src="../../assets/imgs/_bebidas.png"/>
+    <div class="card-title">Bebidas</div>
+    <div class="card-subtitle">5 Listados</div>  
   </ion-card>
 
 </ion-content>

@@ -10,6 +10,8 @@ import { BebidaPage } from '../pages/bebida/bebida';
 import { PratoPage } from '../pages/prato/prato';
 import { SobremesaPage } from '../pages/sobremesa/sobremesa';
 import { LanchePage } from '../pages/lanche/lanche';
+import { CarrinhoPage } from '../pages/carrinho/carrinho';
+import { BasedadosProvider } from '../providers/basedados/basedados';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,8 @@ import { LanchePage } from '../pages/lanche/lanche';
     BebidaPage,
     PratoPage,
     SobremesaPage,
-    LanchePage
+    LanchePage,
+    CarrinhoPage
   ],
   imports: [
     BrowserModule,
@@ -31,12 +34,14 @@ import { LanchePage } from '../pages/lanche/lanche';
     BebidaPage,
     PratoPage,
     SobremesaPage,
-    LanchePage
+    LanchePage,
+    CarrinhoPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    BasedadosProvider
   ]
 })
 export class AppModule {}
