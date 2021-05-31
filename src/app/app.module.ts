@@ -12,6 +12,8 @@ import { SobremesaPage } from '../pages/sobremesa/sobremesa';
 import { LanchePage } from '../pages/lanche/lanche';
 import { CarrinhoPage } from '../pages/carrinho/carrinho';
 import { BasedadosProvider } from '../providers/basedados/basedados';
+import { ProdutosProvider } from '../providers/produtos/produtos';
+import { CategoriasProvider } from '../providers/categorias/categorias';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,10 @@ import { BasedadosProvider } from '../providers/basedados/basedados';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    BasedadosProvider
+    BasedadosProvider,
+    BasedadosProvider,
+    ProdutosProvider,
+    CategoriasProvider
   ]
 })
 export class AppModule {}
