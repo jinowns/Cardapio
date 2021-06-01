@@ -9,21 +9,40 @@ import { PratoPage } from '../pages/prato/prato';
 import { SobremesaPage } from '../pages/sobremesa/sobremesa';
 import { LanchePage } from '../pages/lanche/lanche';
 import { CarrinhoPage } from '../pages/carrinho/carrinho';
+
+import { BasedadosProvider } from '../providers/basedados/basedados';
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any = null;
 
   constructor(platform: Platform, 
               statusBar: StatusBar, 
-              splashScreen: SplashScreen) {
+              splashScreen: SplashScreen,
+              dbProvider:BasedadosProvider) {
     platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
+      statusBar.styleDefault();
+         //Criando o banco de dados
+         dbProvider.createDatabase()
+         .then(() => {
+            // fechando a SplashScreen somente quando o banco for criado
+            this.openHomePage(splashScreen);
+         })
+         .catch(() => {
+            // Caso ocorrer erro na criação do banco
+            this.openHomePage(splashScreen);
+         });
+    });
+    platform.ready().then(() =>{
       statusBar.styleDefault();
       splashScreen.hide();
     });
   }
+  private openHomePage(splashScreen: SplashScreen) {
+    splashScreen.hide();
+    this.rootPage = HomePage;
+ }
 }
+  
 

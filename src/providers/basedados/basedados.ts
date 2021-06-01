@@ -42,11 +42,10 @@ export class BasedadosProvider {
               //Registra categorias iniciais
               db.sqlBatch
               ([
-                  ['insert into categories (name) values (?)', ['Alimentos']as any],
-                  ['insert into categories (name) values (?)', ['Limpeza'  ]as any],
-                  ['insert into categories (name) values (?)', ['Higiene'  ]as any],
-                  ['insert into categories (name) values (?)', ['Casa'     ]as any],
-                  ['insert into categories (name) values (?)', ['Outros'   ]as any]
+                  ['insert into categories (name) values (?)', ['Lanches'  ]as any],
+                  ['insert into categories (name) values (?)', ['Pratos'   ]as any],
+                  ['insert into categories (name) values (?)', ['Sobremesa']as any],
+                  ['insert into categories (name) values (?)', ['Bebidas'  ]as any]
               ])
               .then(() => console.log('Dados de categorias incluídos'))
               .catch(e => console.error('Erro ao incluir dados de categorias', e));

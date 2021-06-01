@@ -1,17 +1,29 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-/*
-  Generated class for the CategoriasProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
-*/
+import { SQLiteObject } from '@ionic-native/sqlite';
+import { BasedadosProvider } from '../../providers/basedados/basedados';
+import 'rxjs/add/operator/map';
 @Injectable()
 export class CategoriasProvider {
+  constructor(private dbProvider: BasedadosProvider) { }
+  public getAll() {
+    return this.dbProvider.getDB()
+    .then((db: SQLiteObject) => {
+      return db.executeSql('select * from categories', [])
+      .then((data: any) => {
+        if (data.rows.length > 0) {
+          let categories: any[] = [];
+          for (var i = 0; i < data.rows.length; i++) {
+            var category = data.rows.item(i);
+            categories.push(category);
+          }
+          return categories;
+        } else {
+          return [];
+        }
 
-  constructor(public http: HttpClient) {
-    console.log('Hello CategoriasProvider Provider');
+      })
+      .catch((e) => console.error(e));
+    })
+    .catch((e) => console.error(e));
   }
-
 }
