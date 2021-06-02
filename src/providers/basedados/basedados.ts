@@ -21,6 +21,8 @@ export class BasedadosProvider {
         this.createTables(db);
         // Inserindo dados de categorias
         this.insertDefaultItems(db);
+
+        this.insertDefaultProdutos(db);
         })
         .catch(e => console.log(e));
     }
@@ -46,6 +48,27 @@ export class BasedadosProvider {
                   ['insert into categories (name) values (?)', ['Pratos'   ]as any],
                   ['insert into categories (name) values (?)', ['Sobremesa']as any],
                   ['insert into categories (name) values (?)', ['Bebidas'  ]as any]
+              ])
+              .then(() => console.log('Dados de categorias incluídos'))
+              .catch(e => console.error('Erro ao incluir dados de categorias', e));
+          }
+        })
+        .catch(e => console.error('Erro ao consultar a tabela categorias', e));
+    }
+
+    //Cadastrar Produtos
+    private insertDefaultProdutos(db: SQLiteObject) {
+        db.executeSql('select COUNT(id) as qtd from products', {})
+        .then((data: any) => {
+          //Se não existe nenhum registro
+          if (data.rows.item(0).qtd == 0) {
+              //Registra categorias iniciais
+              db.sqlBatch
+              ([
+                  ['insert PRODUCTS set (name="Hamburger SQL Lite")'],
+                  ['insert into products (name) values (?)', [''   ]as any],
+                  ['insert into products (name) values (?)', ['']as any],
+                  ['insert into products (name) values (?)', [''  ]as any]
               ])
               .then(() => console.log('Dados de categorias incluídos'))
               .catch(e => console.error('Erro ao incluir dados de categorias', e));

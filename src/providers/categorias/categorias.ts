@@ -20,7 +20,6 @@ export class CategoriasProvider {
         } else {
           return [];
         }
-
       })
       .catch((e) => console.error(e));
     })
