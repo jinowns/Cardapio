@@ -44,7 +44,7 @@ export class BasedadosProvider {
               //Registra categorias iniciais
               db.sqlBatch
               ([
-                  ['insert into categories (name) values (?)', ['Lanches'  ]as any],
+                  ['insert into categories (id,name) values (?,?)', ['1']as any, ['Lanches']as any],
                   ['insert into categories (name) values (?)', ['Pratos'   ]as any],
                   ['insert into categories (name) values (?)', ['Sobremesa']as any],
                   ['insert into categories (name) values (?)', ['Bebidas'  ]as any]
@@ -65,7 +65,7 @@ export class BasedadosProvider {
               //Registra categorias iniciais
               db.sqlBatch
               ([
-                  ['insert PRODUCTS set (name="Hamburger SQL Lite")'],
+                  ['insert into PRODUCTS (id,name,price,category_id) values (?,?,?,?)',['1']as any,['Hamburger']as any, ['13.00']as any,['1']as any],
                   ['insert into products (name) values (?)', [''   ]as any],
                   ['insert into products (name) values (?)', ['']as any],
                   ['insert into products (name) values (?)', [''  ]as any]

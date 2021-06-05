@@ -2,13 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CarrinhoPage } from '../carrinho/carrinho';
 
-/**
- * Generated class for the LanchePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { ProdutosProvider, Product } from '../../providers/produtos/produtos';
 
 @IonicPage()
 @Component({
@@ -16,23 +10,29 @@ import { CarrinhoPage } from '../carrinho/carrinho';
   templateUrl: 'lanche.html',
 })
 export class LanchePage {
-  produto     : string = '';
-  valor       : string = '';
-  ingrediente : string = '';
+  products: any[] = [];
+  onlyInactives: boolean = false;
+  searchText: string = null;
+  //produto     : string = '';
+  //valor       : string = '';
+  //ingrediente : string = '';
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, 
+              public navParams: NavParams,
+              private productProvider: ProdutosProvider) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LanchePage');
   }
+  getAllProducts() {
+    this.productProvider.getAll(!this.onlyInactives, this.searchText)
+    .then((result: any[]) => {
+        this.products = result;
+    });
+}
   openCarrinho():void {
     this.navCtrl.push(CarrinhoPage)
-  }
-  selectHamburger():void {
-    this.produto     = 'Hamburger';
-    this.valor       = '13';
-    this.ingrediente =  'Carne, bacon, queijo, catchup, maionese e orégano';
   }
 
 }

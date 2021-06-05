@@ -6,6 +6,8 @@ import { LanchePage } from '../lanche/lanche';
 import { PratoPage } from '../prato/prato';
 import { SobremesaPage } from '../sobremesa/sobremesa';
 
+import { ProdutosProvider, Product } from '../../providers/produtos/produtos';
+
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -17,7 +19,8 @@ export class HomePage {
 
   pages: Array<{title: string, component: any}>
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController,
+              private productProvider: ProdutosProvider) {
 
 }
 
