@@ -9,7 +9,7 @@ export class BasedadosProvider {
  // Cria um banco caso não exista ou utiliza um banco existente com o nome no parametro
     public getDB() {
     return this.sqlite.create({
-        name: 'products1.db',
+        name: 'products.db',
         location: 'default'
     });
     }
@@ -44,7 +44,7 @@ export class BasedadosProvider {
               //Registra categorias iniciais
               db.sqlBatch
               ([
-                  ['insert into categories (id,name) values (?,?)', ['1']as any, ['Lanches']as any],
+                  ['insert into categories (name) values (?)', ['Lanches']as any],
                   ['insert into categories (name) values (?)', ['Pratos'   ]as any],
                   ['insert into categories (name) values (?)', ['Sobremesa']as any],
                   ['insert into categories (name) values (?)', ['Bebidas'  ]as any]
@@ -62,13 +62,12 @@ export class BasedadosProvider {
         .then((data: any) => {
           //Se não existe nenhum registro
           if (data.rows.item(0).qtd == 0) {
-              //Registra categorias iniciais
               db.sqlBatch
               ([
-                  ['insert into PRODUCTS (id,name,price,category_id) values (?,?,?,?)',['1']as any,['Hamburger']as any, ['13.00']as any,['1']as any],
-                  ['insert into products (name) values (?)', [''   ]as any],
-                  ['insert into products (name) values (?)', ['']as any],
-                  ['insert into products (name) values (?)', [''  ]as any]
+                  ['insert into PRODUCTS (id,name,price,category_id) values (?,?,?,?)',['1','Hamburger','13.00','1']as any]
+                  //['insert into products (name) values (?)', [''   ]as any],
+                  //['insert into products (name) values (?)', ['']as any],
+                  //['insert into products (name) values (?)', [''  ]as any]
               ])
               .then(() => console.log('Dados de categorias incluídos'))
               .catch(e => console.error('Erro ao incluir dados de categorias', e));

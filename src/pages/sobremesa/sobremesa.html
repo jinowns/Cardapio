@@ -5,5 +5,66 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-item (click)="selectFiledeCarne()">
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/_fuba.jpg">
+      </ion-avatar>
+      <h2>Bolo de Fuba</h2>
+      <h3>R$8,00</h3>
+      <p>400g</p>
+    </ion-item>
+  </ion-list>
 
-</ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/bolo-brigadeiro.jpg">
+      </ion-avatar>
+      <h2>Bolo de Brigadeiro</h2>
+      <h3>R$8,00</h3>
+      <p>350g</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/petitGateau.webp">
+      </ion-avatar>
+      <h2>Petit Gateau</h2>
+      <h3>R$10,00</h3>
+      <p>Acompanhado com Sorvete</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/tortadeMorango.jpg">
+      </ion-avatar>
+      <h2>Torta de Morango</h2>
+      <h3>R$8,50</h3>
+      <p>300g</p>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/mussedeChocolate.webp">
+      </ion-avatar>
+      <h2>Musse de Chocolate</h2>
+      <h3>R$9,00</h3>
+      <p>200g</p>
+    </ion-item>
+  </ion-list>
+
+<!--Footer-->
+<ion-footer>
+  <br>
+  <button ion-button color="secondary" (click)="openCarrinho()">
+    <ion-icon name="md-cart"></ion-icon>
+     Carrinho
+  </button>     
+</ion-footer>

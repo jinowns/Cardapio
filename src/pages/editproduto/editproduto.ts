@@ -16,6 +16,7 @@ export class EditprodutosPage {
               private toast: ToastController, 
               private productProvider:ProdutosProvider,
               private categoryProvider: CategoriasProvider) {
+    
     this.model = new Product();
     if (this.navParams.data.id) {
       this.productProvider.get(this.navParams.data.id)

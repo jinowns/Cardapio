@@ -5,5 +5,66 @@
 </ion-header>
 
 <ion-content padding>
+  <ion-list>
+    <ion-item (click)="selectFiledeCarne()">
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/_fanta.webp">
+      </ion-avatar>
+      <h2>Fanta Lata</h2>
+      <h3>R$5,00</h3>
+      <p>350ml</p>
+    </ion-item>
+  </ion-list>
 
-</ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/_coca.jpg">
+      </ion-avatar>
+      <h2>Coca-Cola Lata</h2>
+      <h3>R$5,00</h3>
+      <p>350ml</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/_guarana.webp">
+      </ion-avatar>
+      <h2>Guaraná Lata</h2>
+      <h3>R$5,00</h3>
+      <p>350ml</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/_agua.jpg">
+      </ion-avatar>
+      <h2>Água Cristal</h2>
+      <h3>R$2,50</h3>
+      <p>600ml</p>
+    </ion-item>
+  </ion-list>
+  
+  <ion-list>
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/coca2.png">
+      </ion-avatar>
+      <h2>Coca-Cola</h2>
+      <h3>R$10,00</h3>
+      <p>2 Lts</p>
+    </ion-item>
+  </ion-list>
+
+<!--Footer-->
+<ion-footer>
+  <br>
+  <button ion-button color="secondary" (click)="openCarrinho()">
+    <ion-icon name="md-cart"></ion-icon>
+     Carrinho
+  </button>     
+</ion-footer>

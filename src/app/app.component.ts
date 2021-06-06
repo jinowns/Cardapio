@@ -23,6 +23,7 @@ export class MyApp {
               dbProvider:BasedadosProvider) {
     platform.ready().then(() => {
       statusBar.styleDefault();
+      splashScreen.hide();
          //Criando o banco de dados
          dbProvider.createDatabase()
          .then(() => {
@@ -34,10 +35,10 @@ export class MyApp {
             this.openHomePage(splashScreen);
          });
     });
-    platform.ready().then(() =>{
-      statusBar.styleDefault();
-      splashScreen.hide();
-    });
+    //platform.ready().then(() =>{
+    //  statusBar.styleDefault();
+    //  splashScreen.hide();
+    //});
   }
   private openHomePage(splashScreen: SplashScreen) {
     splashScreen.hide();
