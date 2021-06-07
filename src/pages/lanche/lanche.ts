@@ -19,6 +19,7 @@ export class LanchePage {
   //produto     : string = '';
   //valor       : string = '';
   //ingrediente : string = '';
+  
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -66,5 +67,13 @@ export class LanchePage {
   }
   openCarrinho():void {
     this.navCtrl.push(CarrinhoPage)
+  }
+  SelecionadoHamburger(produto : any[99]){
+    produto = 'Hamburger';
+    console.log(produto);
+  }
+  SelecionadoXBacon(produto : any[99]){
+    produto = 'X-bacon';
+    console.log(produto);
   }
 }

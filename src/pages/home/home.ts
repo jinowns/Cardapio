@@ -17,6 +17,8 @@ export class HomePage {
   @ViewChild(Nav) nav: Nav;
   rootPage:any = HomePage;
 
+  public produto: any = [999];
+
   pages: Array<{title: string, component: any}>
 
   constructor(public navCtrl: NavController,
