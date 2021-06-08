@@ -68,12 +68,10 @@ export class LanchePage {
   openCarrinho():void {
     this.navCtrl.push(CarrinhoPage)
   }
-  SelecionadoHamburger(produto : any[99]){
-    produto = 'Hamburger';
-    console.log(produto);
+  SelecionadoHamburger(){
+    
   }
-  SelecionadoXBacon(produto : any[99]){
-    produto = 'X-bacon';
-    console.log(produto);
+  SelecionadoXBacon(){
+   
   }
 }
